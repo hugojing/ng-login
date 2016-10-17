@@ -1,0 +1,14 @@
+<div class="container">
+    <form [hidden]="submitted" (ngSubmit)="onSubmit()" #loginForm='ngForm'>
+        <div class="form-group">
+            <label for="username">用户名</label>
+            <input type="text" class="form-control" id="username" required placeholder="请输入用户名" [(ngModel)]="model.username" name="username" #spy>
+        </div>
+        <div class="form-group">
+            <label for="password">密码</label>
+            <input type="password" class="form-control" id="password" required placeholder="请输入密码" [(ngModel)]="model.password" name="password" #spy>
+        </div>
+        <button type="submit" class="btn btn-default right">登录</button>
+    </form>
+    <p *ngIf="submitted">登录成功</p>
+</div>
